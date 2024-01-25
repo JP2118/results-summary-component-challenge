@@ -4,7 +4,7 @@
   src: url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
 }
 //Colors
-//Summery Colors
+//Summary Colors
 $light-red: hsl(0, 100%, 67%);
 $orangey-yellow: hsl(39, 100%, 56%);
 $green-teal: hsl(166, 100%, 37%);
@@ -107,7 +107,7 @@ body {
   flex-direction: column;
 
   > h3 {
-    font-size: 2.5vh;
+    font-size: 2.2vh;
   }
   padding: 0 8% 0 8%;
 }
@@ -155,7 +155,7 @@ body {
 
 .memory {
   @include item-boxes(
-    $background: $orangey-yellow-bg,
+    $background: $orangey-yellow-bg 30%,
     $textcolor: $orangey-yellow
   );
 }
@@ -179,10 +179,91 @@ body {
 
   &:hover {
     cursor: pointer;
-    background-image: linear-gradient($crcl-violet-blue, $crcl-persian-blue);
+    background-image: linear-gradient(
+      $gr-light-slate-blue,
+      $gr-light-royal-blue
+    );
   }
 }
 
 footer {
   margin: 0;
+}
+
+// Desktop Design
+@media (min-width: 1000px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .component-container {
+    width: 50%;
+    flex-direction: row;
+    margin-top: 25vh;
+    border-radius: 8% 5% 5% 8%;
+    box-shadow: 5px 8px 12px 2px #246db110;
+  }
+
+  .result-container {
+    border-radius: 8% 8% 8% 8%;
+    width: 55%;
+
+    > h3 {
+      font-size: 2.3vh;
+    }
+
+    > p {
+      font-size: 1.6vh;
+      font-weight: 500;
+      padding-bottom: 2vh;
+    }
+  }
+
+  .circle {
+    width: 18.5vh;
+    h2 {
+      font-size: 7vh;
+      transform: translateY(-5%);
+    }
+    p {
+      font-size: 1.7vh;
+      transform: translateY(-60%);
+    }
+  }
+
+  .summary-container {
+    width: 45%;
+    border-radius: 0 5% 5% 0;
+    padding: 0 5% 0 5%;
+  }
+
+  .summary-item {
+    position: relative;
+    border-radius: 4% / 30%;
+    margin-bottom: 1.5vh;
+
+    img {
+      position: absolute;
+      left: 8%;
+    }
+
+    .item-title {
+      padding: 1.6vh 0 1.6vh 20%;
+    }
+
+    .item-points {
+      padding: 1.6vh 5% 1.6vh 0;
+    }
+  }
+
+  .continue-button {
+    border-radius: 8% / 50%;
+    padding: 1.8vh 0 1.8vh 0;
+    margin-top: 2.7vh;
+    margin-bottom: 3vh;
+    font-size: 90%;
+  }
 }
